@@ -8,7 +8,7 @@
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2 family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -46,7 +46,6 @@
                     <label>Ваш ник:</label>
                     <div class="input-wrapper">
                         <input type="text" id="username" placeholder="Введите ваш ник" required>
-                        <button type="button" class="check-btn" onclick="validateField('username')">✓</button>
                     </div>
                 </div>
 
@@ -64,7 +63,6 @@
                             <option value="Dragon">Dragon</option>
                             <option value="5 сундуков">5 сундуков с донатом</option>
                         </select>
-                        <button type="button" class="check-btn" onclick="validateField('donateType')">✓</button>
                     </div>
                 </div>
 
@@ -73,7 +71,6 @@
                         <label>Логин:</label>
                         <div class="input-wrapper">
                             <input type="text" id="loginNick" placeholder="Повторите ник" required>
-                            <button type="button" class="check-btn" onclick="validateField('loginNick')">✓</button>
                         </div>
                     </div>
                     
@@ -81,7 +78,6 @@
                         <label>Сервер:</label>
                         <div class="input-wrapper">
                             <input type="text" id="serverNum" placeholder="Например, Гриф-1" required>
-                            <button type="button" class="check-btn" onclick="validateField('serverNum')">✓</button>
                         </div>
                     </div>
                 </div>
@@ -97,15 +93,6 @@
     </main>
 
     <script>
-        function validateField(id) {
-            const el = document.getElementById(id);
-            if(el.value.trim() !== "") {
-                alert("Поле успешно подтверждено!");
-            } else {
-                alert("Заполните это поле перед подтверждением.");
-            }
-        }
-
         function handleDonate(event) {
             event.preventDefault();
             
@@ -119,7 +106,7 @@
                 return;
             }
 
-            // Имитация записи лога (будет видно в консоли разработчика F12)
+            // Вывод лога в консоль браузера (F12)
             console.log("=== НОВАЯ ЗАЯВКА НА ДОНАТ ===");
             console.log(`Игрок: ${user}`);
             console.log(`Выбранный статус: ${donate}`);
@@ -127,7 +114,7 @@
             console.log(`Игровой сервер: ${server}`);
             console.log("=============================");
 
-            // Вывод сообщения пользователю
+            // Всплывающее окно для пользователя
             alert("Поздравляем с получением доната! Ожидайте от 15минут до 1 часа");
         }
     </script>
