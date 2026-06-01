@@ -159,19 +159,19 @@ body {
     opacity: 0.9;
 }
 
-/* ВИДЖЕТ ОНЛАЙНА */
+/* ВИДЖЕТ ОНЛАЙНА — ТЕПЕРЬ ЧИСТО БЕЛЫЙ И БЕЗ ТЕНЕЙ */
 .online-widget {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -1px; /* Смещаем на 1px вниз, чтобы убрать микро-зазоры */
+    right: -1px;  /* Смещаем на 1px вправо */
     background: #ffffff;
     border-top-left-radius: 28px;
     padding: 25px 35px;
     display: flex;
     align-items: center;
     gap: 20px;
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.05);
     z-index: 3;
+    box-shadow: none; /* Тень полностью удалена */
 }
 
 .widget-icon {
@@ -204,7 +204,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Обновленный стиль для IP адреса (стал крупнее и отчетливее) */
 .widget-ip {
     font-size: 14px;
     font-weight: 800;
@@ -227,6 +226,7 @@ body {
     border-radius: 10px;
 }
 
+/* АДАПТИВНОСТЬ ДЛЯ СМАРТФОНОВ */
 @media (max-width: 900px) {
     .header-container {
         flex-direction: column;
@@ -243,5 +243,7 @@ body {
     .online-widget {
         width: 100%;
         border-radius: 0;
+        bottom: 0;
+        right: 0;
     }
 }
