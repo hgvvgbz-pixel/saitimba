@@ -26,21 +26,30 @@ body {
     display: flex;
     align-items: center;
     margin-right: 40px; /* Расстояние между логотипом и вкладками */
+    cursor: pointer;
 }
 
 /* Размер оригинального логотипа-щита */
 .logo-img {
-    height: 42px;
+    height: 44px;
     width: auto;
-    margin-right: 12px;
+    margin-right: 14px;
 }
 
-/* Делаем надпись ультра-жирной и в одну строчку */
+/* Делаем надпись двухстрочной, аккуратной и убавляем излишнюю жирность */
 .logo-text {
-    font-weight: 900; /* Максимальная жирность */
-    font-size: 20px;
-    color: #1a1a1a;
-    letter-spacing: -0.5px; /* Сжимаем буквы чуть плотнее, как в оригинале */
+    font-weight: 800; 
+    font-size: 15px;
+    line-height: 1.05; /* Прижимаем строки друг к другу, как на оригинале */
+    color: #111111;
+    letter-spacing: 0.3px;
+    display: inline-block;
+}
+
+.logo-text-bottom {
+    font-weight: 800;
+    color: #111111;
+    letter-spacing: 0.3px;
 }
 
 /* Меню навигации */
@@ -57,7 +66,7 @@ body {
     align-items: center;
     text-decoration: none;
     color: #111111;
-    font-weight: 900; /* Делаем шрифт вкладок таким же жирным */
+    font-weight: 800; /* Чуть мягче, но всё еще выразительно */
     font-size: 13px;
     padding: 0 24px;
     letter-spacing: 0.2px;
