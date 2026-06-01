@@ -4,27 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReallyWorld</title>
-    
-    <!-- Правильное и надежное подключение шрифта Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Подключаем иконки Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Подключаем наш файл стилей -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="navbar">
-        <!-- Левая часть: Локальный Логотип и Двухстрочный Текст -->
         <div class="logo-container">
             <img src="logo.png" alt="ReallyWorld Logo" class="logo-img">
             <span class="logo-text">REALLY<br><span class="logo-text-bottom">WORLD</span></span>
         </div>
 
-        <!-- Меню навигации -->
         <nav class="nav-menu">
             <a href="#" class="nav-item active">
                 <i class="fa-solid fa-house icon-orange"></i>
@@ -36,6 +26,20 @@
             </a>
         </nav>
     </header>
+
+    <main class="hero-section">
+        <h1 class="hero-title">ReallyWorld,<br>бесплатный донат тут!</h1>
+
+        <div class="server-status-card">
+            <div class="status-icon-box">
+                <i class="fa-solid fa-star icon-star"></i>
+            </div>
+            <div class="status-text-box">
+                <span class="status-title">НАШ СЕРВЕР</span>
+                <span class="status-ip">MC.REALLYWORLD.RU</span>
+            </div>
+        </div>
+    </main>
 
 </body>
 </html>
