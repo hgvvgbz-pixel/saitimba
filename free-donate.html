@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReallyWorld - Бесплатный донат</title>
+    <title>ReallyWorld - Получение доната</title>
     
     <link rel="icon" href="logo.png" type="image/png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2 family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,30 +37,99 @@
     </header>
 
     <main class="main-content">
-        <div class="banner-container">
+        <div class="donate-panel">
+            <h2 class="panel-title">ПОЛУЧЕНИЕ ДОНАТА</h2>
             
-            <div class="banner-text">
-                <h1>REALLYWORLD,<br><span class="highlight">БЕСПЛАТНЫЙ ДОНАТ ТУТ!</span></h1>
-                <p>Выполняй задания, забирай крутые привилегии и играй в удовольствие!</p>
-            </div>
-
-            <div class="online-widget">
-                <div class="widget-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                    </svg>
-                </div>
-                <div class="widget-info">
-                    <div class="widget-label">НАШ СЕРВЕР</div>
-                    <div class="widget-ip">MC.REALLYWORLD.RU</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 62.4%;"></div>
+            <form id="donateForm" onsubmit="handleDonate(event)">
+                
+                <div class="form-group">
+                    <label>Ваш ник:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" placeholder="Введите ваш ник" required>
+                        <button type="button" class="check-btn" onclick="validateField('username')">✓</button>
                     </div>
                 </div>
-            </div>
 
+                <div class="form-group">
+                    <label>Выберите донат:</label>
+                    <div class="input-wrapper">
+                        <select id="donateType" required>
+                            <option value="" disabled selected>Нажмите для выбора...</option>
+                            <option value="Hero">Hero</option>
+                            <option value="Titan">Titan</option>
+                            <option value="Avenger">Avenger</option>
+                            <option value="Overlord">Overlord</option>
+                            <option value="Magister">Magister</option>
+                            <option value="Imperator">Imperator</option>
+                            <option value="Dragon">Dragon</option>
+                            <option value="5 сундуков">5 сундуков с донатом</option>
+                        </select>
+                        <button type="button" class="check-btn" onclick="validateField('donateType')">✓</button>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Логин:</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="loginNick" placeholder="Повторите ник" required>
+                            <button type="button" class="check-btn" onclick="validateField('loginNick')">✓</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label>Сервер:</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="serverNum" placeholder="Например, Гриф-1" required>
+                            <button type="button" class="check-btn" onclick="validateField('serverNum')">✓</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-donate-btn">Получить</button>
+            </form>
+
+            <div class="panel-footer-text">
+                ваши данные полностью защищены!<br>
+                ваш логин и сервер нужен для удостоверения данных и быстрого зачисления доната.
+            </div>
         </div>
     </main>
 
+    <script>
+        function validateField(id) {
+            const el = document.getElementById(id);
+            if(el.value.trim() !== "") {
+                alert("Поле успешно подтверждено!");
+            } else {
+                alert("Заполните это поле перед подтверждением.");
+            }
+        }
+
+        function handleDonate(event) {
+            event.preventDefault();
+            
+            const user = document.getElementById('username').value;
+            const donate = document.getElementById('donateType').value;
+            const login = document.getElementById('loginNick').value;
+            const server = document.getElementById('serverNum').value;
+
+            if(!user || !donate || !login || !server) {
+                alert("Заполните данные");
+                return;
+            }
+
+            // Имитация записи лога (будет видно в консоли разработчика F12)
+            console.log("=== НОВАЯ ЗАЯВКА НА ДОНАТ ===");
+            console.log(`Игрок: ${user}`);
+            console.log(`Выбранный статус: ${donate}`);
+            console.log(`Повторный логин: ${login}`);
+            console.log(`Игровой сервер: ${server}`);
+            console.log("=============================");
+
+            // Вывод сообщения пользователю
+            alert("Поздравляем с получением доната! Ожидайте от 15минут до 1 часа");
+        }
+    </script>
 </body>
 </html>

@@ -1,4 +1,6 @@
-/* Обнуление отступов и базовая настройка */
+/* ==========================================================================
+   1. ОБНУЛЕНИЕ ОТСТУПОВ И БАЗОВЫЕ НАСТРОЙКИ
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,7 +14,9 @@ body {
     overflow-x: hidden;
 }
 
-/* ШАПКА САЙТА */
+/* ==========================================================================
+   2. ШАПКА САЙТА (HEADER)
+   ========================================================================== */
 .site-header {
     background-color: #ffffff;
     padding: 15px 0;
@@ -30,7 +34,7 @@ body {
     gap: 40px;
 }
 
-/* ЛОГОТИП */
+/* Логотип */
 .logo {
     display: flex;
     align-items: center;
@@ -61,7 +65,7 @@ body {
     color: #ff6a00;
 }
 
-/* НАВИГАЦИЯ / ВКЛАДКИ */
+/* Навигация / Вкладки сверху */
 .navigation {
     display: flex;
     align-items: center;
@@ -79,7 +83,6 @@ body {
     font-size: 13px;
     text-transform: uppercase;
     border-radius: 12px;
-    color: #8c93a3;
     transition: all 0.2s ease;
 }
 
@@ -100,13 +103,18 @@ body {
     height: 16px;
 }
 
-/* ЦЕНТРАЛЬНЫЙ БАННЕР */
+/* ==========================================================================
+   3. ГЛАВНЫЙ КОНТЕЙНЕР (ОБЩИЙ ДЛЯ СТРАНИЦ)
+   ========================================================================== */
 .main-content {
     max-width: 1400px;
     margin: 40px auto;
     padding: 0 40px;
 }
 
+/* ==========================================================================
+   4. КОМПОНЕНТЫ ГЛАВНОЙ СТРАНИЦЫ (БАННЕР И ВИДЖЕТ)
+   ========================================================================== */
 .banner-container {
     position: relative;
     width: 100%;
@@ -159,11 +167,11 @@ body {
     opacity: 0.9;
 }
 
-/* ВИДЖЕТ ОНЛАЙНА — ТЕПЕРЬ ЧИСТО БЕЛЫЙ И БЕЗ ТЕНЕЙ */
+/* Виджет онлайна в углу баннера (Чисто белый, без теней) */
 .online-widget {
     position: absolute;
-    bottom: -1px; /* Смещаем на 1px вниз, чтобы убрать микро-зазоры */
-    right: -1px;  /* Смещаем на 1px вправо */
+    bottom: -1px;
+    right: -1px;
     background: #ffffff;
     border-top-left-radius: 28px;
     padding: 25px 35px;
@@ -171,7 +179,7 @@ body {
     align-items: center;
     gap: 20px;
     z-index: 3;
-    box-shadow: none; /* Тень полностью удалена */
+    box-shadow: none;
 }
 
 .widget-icon {
@@ -226,24 +234,171 @@ body {
     border-radius: 10px;
 }
 
-/* АДАПТИВНОСТЬ ДЛЯ СМАРТФОНОВ */
+/* ==========================================================================
+   5. СТИЛИ ДЛЯ ИГРОВОЙ ПАНЕЛИ (СТРАНИЦА "БЕСПЛАТНЫЙ ДОНАТ")
+   ========================================================================== */
+.donate-panel {
+    background: #ff6a00;
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(239, 108, 0, 0.2);
+    color: #ffffff;
+    text-align: center;
+}
+
+.panel-title {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.input-wrapper input, 
+.input-wrapper select {
+    flex: 1;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    font-weight: 700;
+    outline: none;
+}
+
+.input-wrapper select {
+    cursor: pointer;
+    appearance: none; /* Убираем стандартную стрелочку браузера */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%231a1a1a'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+/* Оранжевые кнопки подтверждения (галочки) */
+.check-btn {
+    background-color: #ff6a00;
+    color: #ffffff;
+    border: 2.5px solid #ffffff;
+    border-radius: 10px;
+    width: 50px;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.check-btn:hover {
+    background-color: #ffffff;
+    color: #ff6a00;
+}
+
+/* Двухколоночный ряд (Логин + Сервер) */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+/* Главная большая кнопка "Получить" */
+.submit-donate-btn {
+    width: 100%;
+    background-color: #ffffff;
+    color: #ff6a00;
+    border: none;
+    padding: 16px;
+    font-size: 22px;
+    font-weight: 900;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.submit-donate-btn:hover {
+    transform: scale(1.015);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Текст-дисклеймер в самом низу панели */
+.panel-footer-text {
+    margin-top: 25px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   6. АДАПТИВНОСТЬ ДЛЯ СМАРТФОНОВ И ПЛАНШЕТОВ
+   ========================================================================== */
 @media (max-width: 900px) {
     .header-container {
         flex-direction: column;
         align-items: flex-start;
+        gap: 20px;
+        padding: 0 20px;
     }
+    
+    .main-content {
+        padding: 0 20px;
+        margin: 20px auto;
+    }
+
     .banner-container {
         height: auto;
         flex-direction: column;
         padding: 40px 25px 140px 25px;
     }
+
     .banner-text h1 {
         font-size: 32px;
     }
+
     .online-widget {
         width: 100%;
         border-radius: 0;
         bottom: 0;
         right: 0;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .donate-panel {
+        padding: 25px 20px;
     }
 }
