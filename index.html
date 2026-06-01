@@ -3,96 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReallyWorld — Магазин привилегий</title>
-    <!-- Подключаем внешний файл стилей -->
+    <title>ReallyWorld - Начало новой эры</title>
+    <!-- Подключаем шрифты для максимального сходства -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <!-- Подключаем стили -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Главный контейнер для карточек товаров -->
-    <div class="container">
-        
-        <!-- Карточка GOD -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://reallyworld.ru/images/god2.png" alt="GOD">
+    <!-- БЕЛАЯ ШАПКА САЙТА (HEADER) -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Логотип -->
+            <div class="logo">
+                <img src="https://reallyworld.ru/images/server-icon.svg" alt="RW Logo">
+                <div class="logo-text">
+                    <span class="logo-title">REALLY</span>
+                    <span class="logo-subtitle">WORLD</span>
+                </div>
             </div>
-            <h3>GOD</h3>
-            <div class="price">4444 руб.</div>
-            <a href="#" class="btn">Купить</a>
+            
+            <!-- Навигация (Вкладки) -->
+            <nav class="navigation">
+                <a href="#" class="nav-link active">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'><path d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/></svg>" class="nav-icon" alt="">
+                    Главная
+                </a>
+                <a href="#" class="nav-link">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff6a00'><path d='M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.65-.5-.65C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h16v6z'/></svg>" class="nav-icon" alt="">
+                    Бесплатный донат
+                </a>
+                <a href="#" class="nav-link text-only">Магазин</a>
+                <a href="#" class="nav-link text-only">Правила</a>
+                <a href="#" class="nav-link text-only">Описание привилегий</a>
+                <a href="#" class="nav-link text-only">Форум</a>
+                <a href="#" class="nav-link text-only">Поддержка</a>
+            </nav>
         </div>
+    </header>
 
-        <!-- Карточка HELPER -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://reallyworld.ru/images/new/HELPER.png" alt="HELPER">
+    <!-- ГЛАВНЫЙ БАННЕР ПО СЕРЕДИНЕ -->
+    <main class="main-content">
+        <div class="banner-container">
+            
+            <!-- Левая текстовая часть баннера -->
+            <div class="banner-text">
+                <h1>REALLYWORLD<br><span class="highlight">НАЧАЛО НОВОЙ ЭРЫ</span></h1>
+                <p>Открой для себя огромные миры полные веселья и миллионов друзей</p>
             </div>
-            <h3>HELPER</h3>
-            <div class="price">6666 руб.</div>
-            <a href="#" class="btn">Купить</a>
-        </div>
 
-        <!-- Карточка DRAGON -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://reallyworld.ru/images/new/DRAGON.png" alt="DRAGON">
+            <!-- Правый нижний виджет онлайна -->
+            <div class="online-widget">
+                <div class="widget-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                </div>
+                <div class="widget-info">
+                    <div class="widget-label">НАШ СЕРВЕР</div>
+                    <div class="widget-ip">ОНЛАЙН: <span class="ip-count">9366 / 15000</span> <span class="copy-badge">MC.REALLYWORLD.RU 📋</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 62.4%;"></div>
+                    </div>
+                </div>
             </div>
-            <h3>DRAGON</h3>
-            <div class="price">1899 руб.</div>
-            <a href="#" class="btn">Купить</a>
-        </div>
 
-        <!-- Карточка IMPERATOR -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://reallyworld.ru/images/new/IMPERATOR.png" alt="IMPERATOR">
-            </div>
-            <h3>IMPERATOR</h3>
-            <div class="price">999 руб.</div>
-            <a href="#" class="btn">Купить</a>
         </div>
-
-        <!-- Карточка ЦАРЬ -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://reallyworld.ru/images/king.png.webp" alt="ЦАРЬ">
-            </div>
-            <h3>ЦАРЬ</h3>
-            <div class="price">2299 руб.</div>
-            <a href="#" class="btn">Купить</a>
-        </div>
-
-        <!-- Карточка TITAN -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://reallyworld.ru/images/titan.webp" alt="TITAN">
-            </div>
-            <h3>TITAN</h3>
-            <div class="price">89.руб</div>
-            <a href="#" class="btn">Купить</a>
-        </div>
-
-        <!-- Карточка Сундука с донат-вещами -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://reallyworld.ru/images/new/donatitem1.png" alt="Кейс с вещами">
-            </div>
-            <h3>3 Сундука вещей</h3>
-            <div class="price">399 руб.</div>
-            <a href="#" class="btn">Купить</a>
-        </div>
-
-        <!-- Карточка Сундука с Донатом -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://reallyworld.ru/images/new/casedonat3.png" alt="Кейс с донатом">
-            </div>
-            <h3>25 Сундуков</h3>
-            <div class="price">399 руб.</div>
-            <a href="#" class="btn">Купить</a>
-        </div>
-
-    </div>
+    </main>
 
 </body>
 </html>
