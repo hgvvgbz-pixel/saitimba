@@ -1,84 +1,95 @@
+/* Обнуляем базовые отступы браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Переключаемся на системные жирные шрифты без засечек */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* Белый фон для всего сайта */
+body {
+    background-color: #ffffff;
+}
+
 /* Стили главного меню (шапки) */
 .navbar {
     display: flex;
-    justify-content: flex-start; /* Прижимает всё к левому краю */
+    justify-content: flex-start; 
     align-items: center;
-    padding: 0 60px; /* Отступ от левого края экрана */
+    padding: 0 60px; 
     height: 85px;
     background-color: #ffffff;
-    position: relative; /* Чтобы вкладки позиционировались относительно шапки */
+    position: relative;
 }
 
 /* Логотип и название */
 .logo-container {
     display: flex;
     align-items: center;
-    margin-right: 40px; /* Расстояние между логотипом и вкладками */
+    margin-right: 40px; 
     cursor: pointer;
 }
 
-/* Размер оригинального логотипа-щита */
 .logo-img {
     height: 44px;
     width: auto;
     margin-right: 14px;
 }
 
-/* Делаем надпись двухстрочной, аккуратной и убавляем излишнюю жирность */
+/* Максимально жирный текст названия логотипа */
 .logo-text {
-    font-weight: 800; 
-    font-size: 15px;
-    line-height: 1.05; /* Прижимаем строки друг к другу, как на оригинале */
+    font-weight: 900; /* Самый жирный стиль */
+    font-size: 16px;
+    line-height: 1.05; 
     color: #111111;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
     display: inline-block;
 }
 
 .logo-text-bottom {
-    font-weight: 800;
+    font-weight: 900;
     color: #111111;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
 }
 
 /* Меню навигации */
 .nav-menu {
     display: flex;
-    align-items: flex-start; /* Прижимаем вкладки к самому верху шапки */
+    align-items: flex-start; 
     height: 100%;
-    gap: 15px; /* Небольшой зазор между вкладками */
+    gap: 15px; 
 }
 
-/* СТИЛЬ ДЛЯ ВКЛАДОК: Спускаем их на уровень оригинала */
+/* Максимально жирные и плотные вкладки */
 .nav-item.active {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #111111;
-    font-weight: 800; 
-    font-size: 13px;
-    padding: 0 24px;
-    letter-spacing: 0.2px;
     background-color: #ffffff;
     
-    /* Скругление только снизу */
+    color: #111111; /* Насыщенный цвет */
+    font-weight: 900; /* Выкручиваем жирность вкладок на максимум */
+    font-size: 13.5px; /* Слегка увеличили размер */
+    padding: 0 24px;
+    letter-spacing: 0.3px;
+    
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.08);
     
-    /* МАГИЯ ТУТ: Убираем отрицательные отступы, задаем четкую высоту 
-       и сдвигаем вкладку чуть ниже, чтобы она свисала идеально как на фото */
     height: 65px; 
     margin-top: 0; 
-    transform: translateY(5px); /* Плавно опускаем вкладки понинее */
+    transform: translateY(5px); 
 }
 
-/* Оранжевый квадрат вокруг иконок (для домика и подарка) */
+/* Оранжевый квадрат вокруг иконок */
 .icon-orange {
-    background-color: #ff8c00; /* Фирменный оранжевый */
+    background-color: #ff8c00; 
     color: #ffffff;
     padding: 9px;
     border-radius: 9px;
     margin-right: 12px;
     font-size: 13px;
-    box-shadow: 0px 4px 12px rgba(255, 140, 0, 0.35); /* Свечение иконки */
+    box-shadow: 0px 4px 12px rgba(255, 140, 0, 0.35); 
 }
