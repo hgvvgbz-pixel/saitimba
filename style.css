@@ -1,12 +1,93 @@
-body {
-    background: #222;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 100px;
+CSS
+/* Обнуляем базовые отступы браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 18px;
+/* Белый фон для всего сайта */
+body {
+    background-color: #ffffff;
+}
+
+/* Стили главного меню (шапки) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+    background-color: #ffffff;
+}
+
+/* Логотип ReallyWorld */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.1;
+    color: #111111;
+    letter-spacing: 0.5px;
+}
+
+.logo-subtext {
+    font-weight: 400;
+    color: #444444;
+}
+
+/* Меню навигации */
+.nav-menu {
+    display: flex;
+    align-items: stretch; /* Растягивает элементы по высоте шапки */
+    height: 100%;
+}
+
+/* Общий стиль для всех вкладок */
+.nav-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #8c96a0; /* Серый цвет для неактивных вкладок */
+    font-weight: 700;
+    font-size: 12px;
+    padding: 0 20px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+/* Эффект при наведении на обычные вкладки */
+.nav-item:hover {
+    color: #111111;
+}
+
+/* --- ТА САМАЯ ВКЛАДКА "ГЛАВНАЯ" --- */
+.nav-item.active {
+    color: #111111;
+    background-color: #ffffff;
+    padding: 0 25px;
+    position: relative;
+    /* Создаем красивую тень и скругление снизу панели */
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+    height: 65px; /* Чуть короче общей шапки, чтобы свисала */
+    margin-top: -15px; /* Сдвигаем немного вверх для эффекта "вкладки" */
+    top: 0;
+}
+
+/* Оранжевый квадрат вокруг домика */
+.icon-home {
+    background-color: #ff8c00; /* Ярко-оранжевый */
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-size: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 140, 0, 0.3); /* Оранжевое свечение */
 }
