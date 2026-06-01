@@ -1,16 +1,3 @@
-/* Обнуляем базовые отступы браузера */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Белый фон для всего сайта */
-body {
-    background-color: #ffffff;
-}
-
 /* Стили главного меню (шапки) */
 .navbar {
     display: flex;
@@ -19,6 +6,7 @@ body {
     padding: 0 60px; /* Отступ от левого края экрана */
     height: 85px;
     background-color: #ffffff;
+    position: relative; /* Чтобы вкладки позиционировались относительно шапки */
 }
 
 /* Логотип и название */
@@ -55,32 +43,33 @@ body {
 /* Меню навигации */
 .nav-menu {
     display: flex;
-    align-items: stretch;
+    align-items: flex-start; /* Прижимаем вкладки к самому верху шапки */
     height: 100%;
     gap: 15px; /* Небольшой зазор между вкладками */
 }
 
-/* Стиль для ОБЕИХ активных вкладок ("Главная" и "Бесплатный донат") */
+/* СТИЛЬ ДЛЯ ВКЛАДОК: Спускаем их на уровень оригинала */
 .nav-item.active {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #111111;
-    font-weight: 800; /* Чуть мягче, но всё еще выразительно */
+    font-weight: 800; 
     font-size: 13px;
     padding: 0 24px;
     letter-spacing: 0.2px;
     background-color: #ffffff;
-    position: relative;
     
-    /* Скругление снизу панели и мягкая тень */
+    /* Скругление только снизу */
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.07);
     
-    height: 68px; /* Вкладки свисают ниже шапки */
-    margin-top: -17px;
-    top: 0;
+    /* МАГИЯ ТУТ: Убираем отрицательные отступы, задаем четкую высоту 
+       и сдвигаем вкладку чуть ниже, чтобы она свисала идеально как на фото */
+    height: 65px; 
+    margin-top: 0; 
+    transform: translateY(5px); /* Плавно опускаем вкладки понинее */
 }
 
 /* Оранжевый квадрат вокруг иконок (для домика и подарка) */
